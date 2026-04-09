@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SBTI पर्सनैलिटी टेस्ट</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <a
+    class="site-logo-link"
+    href="https://go2run.ai/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Go2Run खोलें"
+  >
+    <img class="site-logo-image" src="./assets/go2run-logo.png" alt="Go2Run" />
+  </a>
+  <div class="shell">
+    <section id="intro" class="screen active">
+      <div class="hero card hero-minimal">
+        <h1>MBTI अब पुराना हो गया. SBTI आ गया.</h1>
+        <div class="hero-actions hero-actions-single">
+          <button id="startBtn" class="btn-primary">टेस्ट शुरू करें</button>
+        </div>
+        <div class="powered-by">
+          <a
+            class="powered-by-link"
+            href="https://go2run.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Powered by Go2Run.AI
+          </a>
+          <span> क्या तुम अपना खुद का वायरल पर्सनैलिटी टेस्ट बनाना चाहते हो?</span>
+          <span> </span>
+          <a
+            class="powered-by-link"
+            href="https://go2run.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Click
+          </a>
+          <span> और जानने के लिए</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="test" class="screen">
+      <div class="test-wrap card">
+        <div class="topbar">
+          <div class="progress"><span id="progressBar"></span></div>
+          <div class="progress-text" id="progressText">0 / 31</div>
+        </div>
+
+        <div id="questionList" class="question-list"></div>
+
+        <div class="actions-bottom">
+          <div class="hint" id="testHint">भाग नहीं सकते. पूरा टेस्ट खत्म करना पड़ेगा.</div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button id="backIntroBtn" class="btn-secondary">होम पर वापस</button>
+            <button id="submitBtn" class="btn-primary" disabled>रिजल्ट देखें</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="result" class="screen">
+      <div class="result-wrap card">
+        <div class="result-layout">
+          <div class="result-top">
+            <div class="poster-box" id="posterBox">
+              <img id="posterImage" class="poster-image" alt="रिजल्ट पोस्टर" />
+              <div id="posterCaption" class="poster-caption">हाँ, ये थोड़ा ज़्यादा ही सही बैठ गया.</div>
+            </div>
+
+            <div class="type-box">
+              <div class="type-kicker" id="resultModeKicker">तुम्हारा मुख्य टाइप</div>
+              <div class="type-name" id="resultTypeName">CTRL (सब संभालने वाला)</div>
+              <div class="match" id="matchBadge">मैच 92%</div>
+              <div class="type-subname" id="resultTypeSub">सिस्टम की टिप्पणी यहाँ दिखेगी.</div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <h3>झटपट पढ़ाई</h3>
+            <p id="resultDesc"></p>
+          </div>
+
+          <div class="dim-box">
+            <h3>पंद्रह डाइमेंशन का ब्रेकडाउन</h3>
+            <div id="dimList" class="dim-list"></div>
+          </div>
+
+          <div class="note-box">
+            <h3>छोटा डिस्क्लेमर</h3>
+            <p id="funNote">यह टेस्ट सिर्फ मज़े के लिए है. इसे diagnosis, hiring, dating या life decisions के लिए इस्तेमाल मत करो.</p>
+          </div>
+
+          <details class="author-box">
+            <summary>इस वर्ज़न के बारे में</summary>
+            <div class="author-content">
+              <p>यह कोई serious psychology tool नहीं है. यह जानबूझकर chaotic, meme-energy वाला internet personality quiz है.</p>
+              <p>हिंदी वर्ज़न को भारतीय audience के हिसाब से localize किया गया है, इसलिए कई jokes, game references और expressions को सीधा translate नहीं किया गया.</p>
+              <p>कुछ results जानबूझकर extra dramatic हैं. अगर तुम्हें हल्का-सा attack feel हुआ, तो समझो quiz ने काम कर दिया.</p>
+              <p>इसे हँसने, दोस्तों को भेजने और खुद की थोड़ी roasting करने के लिए इस्तेमाल करो. Scientific proof मत समझना.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="result-actions">
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button id="restartBtn" class="btn-secondary">फिर से करो</button>
+            <button id="toTopBtn" class="btn-primary">होम पर वापस</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="./main-hi.js"></script>
+</body>
+</html>

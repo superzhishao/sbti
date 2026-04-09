@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SBTI Personality Quiz</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <a
+    class="site-logo-link"
+    href="https://go2run.ai/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Open Go2Run"
+  >
+    <img class="site-logo-image" src="./assets/go2run-logo.png" alt="Go2Run" />
+  </a>
+  <div class="shell">
+    <section id="intro" class="screen active">
+      <div class="hero card hero-minimal">
+        <h1>MBTI is old news. Meet SBTI.</h1>
+        <div class="hero-actions hero-actions-single">
+          <button id="startBtn" class="btn-primary">Start the quiz</button>
+        </div>
+        <div class="powered-by">
+          <a
+            class="powered-by-link"
+            href="https://go2run.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Powered by Go2Run.AI
+          </a>
+          <span> Want to make your own viral personality quiz?</span>
+          <span> Click </span>
+          <a
+            class="powered-by-link"
+            href="https://go2run.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            here
+          </a>
+          <span> to learn more.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="test" class="screen">
+      <div class="test-wrap card">
+        <div class="topbar">
+          <div class="progress"><span id="progressBar"></span></div>
+          <div class="progress-text" id="progressText">0 / 31</div>
+        </div>
+
+        <div id="questionList" class="question-list"></div>
+
+        <div class="actions-bottom">
+          <div class="hint" id="testHint">No escape. Finish every question. The world is messy enough already.</div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button id="backIntroBtn" class="btn-secondary">Back home</button>
+            <button id="submitBtn" class="btn-primary" disabled>See my result</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="result" class="screen">
+      <div class="result-wrap card">
+        <div class="result-layout">
+          <div class="result-top">
+            <div class="poster-box" id="posterBox">
+              <img id="posterImage" class="poster-image" alt="Result poster" />
+              <div id="posterCaption" class="poster-caption">Well, this says a lot about you.</div>
+            </div>
+
+            <div class="type-box">
+              <div class="type-kicker" id="resultModeKicker">Your core type</div>
+              <div class="type-name" id="resultTypeName">CTRL (The Handler)</div>
+              <div class="match" id="matchBadge">Match score 92%</div>
+              <div class="type-subname" id="resultTypeSub">The system notes will show up here.</div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <h3>Quick read</h3>
+            <p id="resultDesc"></p>
+          </div>
+
+          <div class="dim-box">
+            <h3>Fifteen-dimension breakdown</h3>
+            <div id="dimList" class="dim-list"></div>
+          </div>
+
+          <div class="note-box">
+            <h3>Friendly disclaimer</h3>
+            <p id="funNote">This quiz is for fun. Please do not use it for diagnosis, hiring, dating, breakups, or life decisions.</p>
+          </div>
+
+          <details class="author-box">
+            <summary>About this version</summary>
+            <div class="author-content">
+              <p>This is a deliberately unserious internet personality quiz. It is inspired by chaotic meme-test energy, not clinical psychology.</p>
+              <p>The English version is localized for Western audiences, so some examples and pop-culture references were rewritten instead of translated literally.</p>
+              <p>Some outcomes are dramatic on purpose. If it accidentally reads you to filth, that is between you and the quiz.</p>
+              <p>Use it for laughs, self-dragging, and sending to friends. Do not use it as evidence in court.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="result-actions">
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button id="restartBtn" class="btn-secondary">Retake</button>
+            <button id="toTopBtn" class="btn-primary">Back home</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="./main-en.js"></script>
+</body>
+</html>

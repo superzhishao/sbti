@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SBTI Test de personnalité</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <a
+    class="site-logo-link"
+    href="https://go2run.ai/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Ouvrir Go2Run"
+  >
+    <img class="site-logo-image" src="./assets/go2run-logo.png" alt="Go2Run" />
+  </a>
+  <div class="shell">
+    <section id="intro" class="screen active">
+      <div class="hero card hero-minimal">
+        <h1>Le MBTI, c'est déjà vu. Voici le SBTI.</h1>
+        <div class="hero-actions hero-actions-single">
+          <button id="startBtn" class="btn-primary">Commencer le test</button>
+        </div>
+        <div class="powered-by">
+          <a
+            class="powered-by-link"
+            href="https://go2run.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Powered by Go2Run.AI
+          </a>
+          <span> Tu veux créer ton propre test de personnalité viral ?</span>
+          <span> </span>
+          <a
+            class="powered-by-link"
+            href="https://go2run.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Click
+          </a>
+          <span> pour en savoir plus</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="test" class="screen">
+      <div class="test-wrap card">
+        <div class="topbar">
+          <div class="progress"><span id="progressBar"></span></div>
+          <div class="progress-text" id="progressText">0 / 31</div>
+        </div>
+
+        <div id="questionList" class="question-list"></div>
+
+        <div class="actions-bottom">
+          <div class="hint" id="testHint">Tu ne t'échappes pas comme ça. Réponds jusqu'au bout.</div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button id="backIntroBtn" class="btn-secondary">Retour à l'accueil</button>
+            <button id="submitBtn" class="btn-primary" disabled>Voir mon résultat</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="result" class="screen">
+      <div class="result-wrap card">
+        <div class="result-layout">
+          <div class="result-top">
+            <div class="poster-box" id="posterBox">
+              <img id="posterImage" class="poster-image" alt="Affiche du résultat" />
+              <div id="posterCaption" class="poster-caption">Oui, ça en dit beaucoup sur toi.</div>
+            </div>
+
+            <div class="type-box">
+              <div class="type-kicker" id="resultModeKicker">Ton type principal</div>
+              <div class="type-name" id="resultTypeName">CTRL (Le pilote)</div>
+              <div class="match" id="matchBadge">Compatibilité 92%</div>
+              <div class="type-subname" id="resultTypeSub">Le commentaire système s'affichera ici.</div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <h3>Lecture rapide</h3>
+            <p id="resultDesc"></p>
+          </div>
+
+          <div class="dim-box">
+            <h3>Analyse des quinze dimensions</h3>
+            <div id="dimList" class="dim-list"></div>
+          </div>
+
+          <div class="note-box">
+            <h3>Petit avertissement</h3>
+            <p id="funNote">Ce test est fait pour s'amuser. Merci de ne pas l'utiliser pour diagnostiquer, recruter, draguer ou décider de ta vie.</p>
+          </div>
+
+          <details class="author-box">
+            <summary>A propos de cette version</summary>
+            <div class="author-content">
+              <p>Ce test n'est pas un outil psychologique serieux. C'est un quiz internet volontairement chaotique et un peu moqueur.</p>
+              <p>La version francaise a ete adaptee pour un public francais, donc certaines formulations et references ont ete reecrites plutot que traduites mot a mot.</p>
+              <p>Certains resultats sont volontairement dramatiques. Si tu te sens un peu trop vise, c'est entre toi et le quiz.</p>
+              <p>Utilise-le pour rire, pour te faire gentiment tacler, et pour l'envoyer a tes amis. Pas comme preuve scientifique.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="result-actions">
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button id="restartBtn" class="btn-secondary">Recommencer</button>
+            <button id="toTopBtn" class="btn-primary">Retour à l'accueil</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="./main-fr.js"></script>
+</body>
+</html>

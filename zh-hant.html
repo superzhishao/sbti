@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SBTI 人格測驗</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <a
+    class="site-logo-link"
+    href="https://go2run.ai/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="開啟 Go2Run"
+  >
+    <img class="site-logo-image" src="./assets/go2run-logo.png" alt="Go2Run" />
+  </a>
+  <div class="shell">
+    <section id="intro" class="screen active">
+      <div class="hero card hero-minimal">
+        <h1>MBTI 已經太舊了，現在是 SBTI。</h1>
+        <div class="hero-actions hero-actions-single">
+          <button id="startBtn" class="btn-primary">開始測驗</button>
+        </div>
+        <div class="powered-by">
+          <a
+            class="powered-by-link"
+            href="https://go2run.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Powered by Go2Run.AI
+          </a>
+          <span> 你也想做一個屬於自己的爆紅人格測驗？</span>
+          <span> </span>
+          <a
+            class="powered-by-link"
+            href="https://go2run.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Click
+          </a>
+          <span> 了解更多</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="test" class="screen">
+      <div class="test-wrap card">
+        <div class="topbar">
+          <div class="progress"><span id="progressBar"></span></div>
+          <div class="progress-text" id="progressText">0 / 31</div>
+        </div>
+
+        <div id="questionList" class="question-list"></div>
+
+        <div class="actions-bottom">
+          <div class="hint" id="testHint">沒有捷徑，題目請乖乖做完。世界已經夠亂了。</div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button id="backIntroBtn" class="btn-secondary">回首頁</button>
+            <button id="submitBtn" class="btn-primary" disabled>看我的結果</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="result" class="screen">
+      <div class="result-wrap card">
+        <div class="result-layout">
+          <div class="result-top">
+            <div class="poster-box" id="posterBox">
+              <img id="posterImage" class="poster-image" alt="測驗結果海報" />
+              <div id="posterCaption" class="poster-caption">好，這下你的氣質算是被抓出來了。</div>
+            </div>
+
+            <div class="type-box">
+              <div class="type-kicker" id="resultModeKicker">你的核心人格</div>
+              <div class="type-name" id="resultTypeName">CTRL（控場者）</div>
+              <div class="match" id="matchBadge">匹配度 92%</div>
+              <div class="type-subname" id="resultTypeSub">系統備註會顯示在這裡。</div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <h3>快速解讀</h3>
+            <p id="resultDesc"></p>
+          </div>
+
+          <div class="dim-box">
+            <h3>十五維度分析</h3>
+            <div id="dimList" class="dim-list"></div>
+          </div>
+
+          <div class="note-box">
+            <h3>友情提醒</h3>
+            <p id="funNote">本測驗純屬娛樂，請不要拿去做診斷、招募、戀愛決策、分手判決或人生規劃。</p>
+          </div>
+
+          <details class="author-box">
+            <summary>關於這個版本</summary>
+            <div class="author-content">
+              <p>這不是正經心理測驗，而是一個故意帶點網路感、嘴砲感和混亂感的人格小測驗。</p>
+              <p>繁中版是針對台灣、香港使用者重新改寫，不是單純把簡體轉成繁體，所以部分題目、語氣和流行文化參考都有重新在地化。</p>
+              <p>有些結果文案會故意很酸、很誇張、很像朋友在吐槽你。被戳到的話，就當作測驗有完成它的工作。</p>
+              <p>最適合拿來自嘲、轉傳朋友、互相傷害，不適合拿來當正式人格鑑定。</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="result-actions">
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button id="restartBtn" class="btn-secondary">重測一次</button>
+            <button id="toTopBtn" class="btn-primary">回首頁</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="./main-zh-hant.js"></script>
+</body>
+</html>

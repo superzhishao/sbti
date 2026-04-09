@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SBTI 성격 테스트</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <a
+    class="site-logo-link"
+    href="https://go2run.ai/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Go2Run 열기"
+  >
+    <img class="site-logo-image" src="./assets/go2run-logo.png" alt="Go2Run" />
+  </a>
+  <div class="shell">
+    <section id="intro" class="screen active">
+      <div class="hero card hero-minimal">
+        <h1>MBTI는 이제 너무 익숙하다. 다음은 SBTI.</h1>
+        <div class="hero-actions hero-actions-single">
+          <button id="startBtn" class="btn-primary">테스트 시작</button>
+        </div>
+        <div class="powered-by">
+          <a
+            class="powered-by-link"
+            href="https://go2run.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Powered by Go2Run.AI
+          </a>
+          <span> 너도 직접 바이럴 성격 테스트를 만들고 싶다면?</span>
+          <span> </span>
+          <a
+            class="powered-by-link"
+            href="https://go2run.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Click
+          </a>
+          <span> 해서 자세히 보기</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="test" class="screen">
+      <div class="test-wrap card">
+        <div class="topbar">
+          <div class="progress"><span id="progressBar"></span></div>
+          <div class="progress-text" id="progressText">0 / 31</div>
+        </div>
+
+        <div id="questionList" class="question-list"></div>
+
+        <div class="actions-bottom">
+          <div class="hint" id="testHint">끝까지 다 답해야 합니다. 여기까지 왔으면 완주하세요.</div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button id="backIntroBtn" class="btn-secondary">처음으로</button>
+            <button id="submitBtn" class="btn-primary" disabled>결과 보기</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="result" class="screen">
+      <div class="result-wrap card">
+        <div class="result-layout">
+          <div class="result-top">
+            <div class="poster-box" id="posterBox">
+              <img id="posterImage" class="poster-image" alt="결과 포스터" />
+              <div id="posterCaption" class="poster-caption">네, 생각보다 성격이 많이 드러났습니다.</div>
+            </div>
+
+            <div class="type-box">
+              <div class="type-kicker" id="resultModeKicker">당신의 메인 타입</div>
+              <div class="type-name" id="resultTypeName">CTRL (판 짜는 사람)</div>
+              <div class="match" id="matchBadge">일치도 92%</div>
+              <div class="type-subname" id="resultTypeSub">여기에 시스템 코멘트가 표시됩니다.</div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <h3>한줄 해석</h3>
+            <p id="resultDesc"></p>
+          </div>
+
+          <div class="dim-box">
+            <h3>15차원 성향 분석</h3>
+            <div id="dimList" class="dim-list"></div>
+          </div>
+
+          <div class="note-box">
+            <h3>주의</h3>
+            <p id="funNote">이 테스트는 어디까지나 재미용입니다. 진단, 채용, 연애, 인생 결정에 근거로 쓰지 마세요.</p>
+          </div>
+
+          <details class="author-box">
+            <summary>이 한국어 버전에 대해</summary>
+            <div class="author-content">
+              <p>이 테스트는 진지한 심리검사가 아니라 인터넷 밈 감성으로 만든 성격 놀이형 테스트입니다.</p>
+              <p>한국어 버전은 직역보다 현지에서 더 자연스럽게 읽히도록 표현과 예시를 많이 로컬라이즈했습니다.</p>
+              <p>결과 문구는 일부러 조금 과장되고 얄밉게 써뒀습니다. 너무 정확해 보여도 절반은 연출입니다.</p>
+              <p>친구들한테 공유하면서 웃기엔 좋지만, 인생의 중대 판단 기준으로 쓰는 건 비추천입니다.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="result-actions">
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button id="restartBtn" class="btn-secondary">다시 하기</button>
+            <button id="toTopBtn" class="btn-primary">처음으로</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="./main-ko.js"></script>
+</body>
+</html>

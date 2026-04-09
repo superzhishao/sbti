@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SBTI ব্যক্তিত্ব পরীক্ষা</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <a
+    class="site-logo-link"
+    href="https://go2run.ai/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Go2Run খুলুন"
+  >
+    <img class="site-logo-image" src="./assets/go2run-logo.png" alt="Go2Run" />
+  </a>
+  <div class="shell">
+    <section id="intro" class="screen active">
+      <div class="hero card hero-minimal">
+        <h1>MBTI এখন পুরনো খবর। এবার SBTI.</h1>
+        <div class="hero-actions hero-actions-single">
+          <button id="startBtn" class="btn-primary">টেস্ট শুরু করুন</button>
+        </div>
+        <div class="powered-by">
+          <a
+            class="powered-by-link"
+            href="https://go2run.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Powered by Go2Run.AI
+          </a>
+          <span> আপনিও কি নিজের ভাইরাল পারসোনালিটি টেস্ট বানাতে চান?</span>
+          <span> </span>
+          <a
+            class="powered-by-link"
+            href="https://go2run.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Click
+          </a>
+          <span> করে আরও জানুন</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="test" class="screen">
+      <div class="test-wrap card">
+        <div class="topbar">
+          <div class="progress"><span id="progressBar"></span></div>
+          <div class="progress-text" id="progressText">0 / 31</div>
+        </div>
+
+        <div id="questionList" class="question-list"></div>
+
+        <div class="actions-bottom">
+          <div class="hint" id="testHint">এখান থেকে পালানোর উপায় নেই। সব প্রশ্ন শেষ করুন।</div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button id="backIntroBtn" class="btn-secondary">হোমে ফিরুন</button>
+            <button id="submitBtn" class="btn-primary" disabled>আমার ফলাফল দেখুন</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="result" class="screen">
+      <div class="result-wrap card">
+        <div class="result-layout">
+          <div class="result-top">
+            <div class="poster-box" id="posterBox">
+              <img id="posterImage" class="poster-image" alt="ফলাফলের পোস্টার" />
+              <div id="posterCaption" class="poster-caption">হ্যাঁ, ব্যাপারটা অস্বস্তিকর রকম সত্যি।</div>
+            </div>
+
+            <div class="type-box">
+              <div class="type-kicker" id="resultModeKicker">আপনার মূল টাইপ</div>
+              <div class="type-name" id="resultTypeName">CTRL (সব সামলানো মানুষ)</div>
+              <div class="match" id="matchBadge">মিল 92%</div>
+              <div class="type-subname" id="resultTypeSub">এখানে সিস্টেমের মন্তব্য দেখা যাবে।</div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <h3>সংক্ষিপ্ত ব্যাখ্যা</h3>
+            <p id="resultDesc"></p>
+          </div>
+
+          <div class="dim-box">
+            <h3>পনেরোটি মাত্রার বিশ্লেষণ</h3>
+            <div id="dimList" class="dim-list"></div>
+          </div>
+
+          <div class="note-box">
+            <h3>একটা কথা</h3>
+            <p id="funNote">এই টেস্ট শুধু মজার জন্য। দয়া করে এটাকে ডায়াগনোসিস, চাকরি, প্রেম বা জীবনের বড় সিদ্ধান্তের ভিত্তি বানাবেন না।</p>
+          </div>
+
+          <details class="author-box">
+            <summary>এই সংস্করণ সম্পর্কে</summary>
+            <div class="author-content">
+              <p>এটা কোনো সিরিয়াস সাইকোলজিক্যাল টেস্ট না; এটা ইচ্ছা করেই একটু মিমি, একটু ব্যঙ্গাত্মক, আর একটু বিশৃঙ্খল ইন্টারনেট কুইজ।</p>
+              <p>বাংলা সংস্করণটা বাংলাদেশি ইউজারদের জন্য লোকালাইজ করা হয়েছে, তাই অনেক উদাহরণ, টোন আর পপ-কালচার রেফারেন্স সরাসরি অনুবাদ না করে নতুন করে লেখা হয়েছে।</p>
+              <p>কিছু ফলাফল ইচ্ছা করে একটু কড়া, একটু বাড়াবাড়ি, একটু ব্যক্তিগত আক্রমণের মতো। সেটাই ডিজাইন।</p>
+              <p>বন্ধুদের পাঠিয়ে হাসাহাসি করার জন্য একদম ঠিক। জীবন পাল্টে ফেলার সিদ্ধান্ত নেওয়ার জন্য না।</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="result-actions">
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button id="restartBtn" class="btn-secondary">আবার দিন</button>
+            <button id="toTopBtn" class="btn-primary">হোমে ফিরুন</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="./main-bn.js"></script>
+</body>
+</html>

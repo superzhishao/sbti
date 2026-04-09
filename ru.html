@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SBTI Тест личности</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <a
+    class="site-logo-link"
+    href="https://go2run.ai/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Открыть Go2Run"
+  >
+    <img class="site-logo-image" src="./assets/go2run-logo.png" alt="Go2Run" />
+  </a>
+  <div class="shell">
+    <section id="intro" class="screen active">
+      <div class="hero card hero-minimal">
+        <h1>MBTI уже заезжен. Теперь очередь SBTI.</h1>
+        <div class="hero-actions hero-actions-single">
+          <button id="startBtn" class="btn-primary">Начать тест</button>
+        </div>
+        <div class="powered-by">
+          <a
+            class="powered-by-link"
+            href="https://go2run.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Powered by Go2Run.AI
+          </a>
+          <span> Хочешь сделать свой вирусный тест личности?</span>
+          <span> </span>
+          <a
+            class="powered-by-link"
+            href="https://go2run.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Click
+          </a>
+          <span> чтобы узнать больше</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="test" class="screen">
+      <div class="test-wrap card">
+        <div class="topbar">
+          <div class="progress"><span id="progressBar"></span></div>
+          <div class="progress-text" id="progressText">0 / 31</div>
+        </div>
+
+        <div id="questionList" class="question-list"></div>
+
+        <div class="actions-bottom">
+          <div class="hint" id="testHint">Сбежать не выйдет. Пройди тест до конца.</div>
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button id="backIntroBtn" class="btn-secondary">На главную</button>
+            <button id="submitBtn" class="btn-primary" disabled>Посмотреть результат</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="result" class="screen">
+      <div class="result-wrap card">
+        <div class="result-layout">
+          <div class="result-top">
+            <div class="poster-box" id="posterBox">
+              <img id="posterImage" class="poster-image" alt="Постер результата" />
+              <div id="posterCaption" class="poster-caption">Ну да, это подозрительно точно про тебя.</div>
+            </div>
+
+            <div class="type-box">
+              <div class="type-kicker" id="resultModeKicker">Твой основной тип</div>
+              <div class="type-name" id="resultTypeName">CTRL (Решала)</div>
+              <div class="match" id="matchBadge">Совпадение 92%</div>
+              <div class="type-subname" id="resultTypeSub">Здесь появится комментарий системы.</div>
+            </div>
+          </div>
+
+          <div class="analysis-box">
+            <h3>Коротко о тебе</h3>
+            <p id="resultDesc"></p>
+          </div>
+
+          <div class="dim-box">
+            <h3>Разбор по пятнадцати шкалам</h3>
+            <div id="dimList" class="dim-list"></div>
+          </div>
+
+          <div class="note-box">
+            <h3>Небольшой дисклеймер</h3>
+            <p id="funNote">Этот тест сделан для развлечения. Не используй его для диагностики, найма, отношений или жизненных решений.</p>
+          </div>
+
+          <details class="author-box">
+            <summary>Об этой версии</summary>
+            <div class="author-content">
+              <p>Это не серьезный психологический инструмент, а намеренно хаотичный интернет-квиз с мемной подачей.</p>
+              <p>Русская версия локализована под аудиторию из России, поэтому некоторые формулировки, шутки и игровые примеры были переписаны, а не переведены дословно.</p>
+              <p>Некоторые результаты нарочно драматичные и колкие. Если тебя слишком сильно задело, значит тест сработал.</p>
+              <p>Используй его, чтобы посмеяться, отправить друзьям и слегка прожарить себя. Не как научное заключение.</p>
+            </div>
+          </details>
+        </div>
+
+        <div class="result-actions">
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <button id="restartBtn" class="btn-secondary">Пройти заново</button>
+            <button id="toTopBtn" class="btn-primary">На главную</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="./main-ru.js"></script>
+</body>
+</html>

@@ -185,6 +185,182 @@ p {
     margin-top: 28px;
 }
 
+.hero-actions-home {
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    margin-top: 28px;
+}
+
+.hero-actions-home .btn-primary {
+    flex: 0 0 auto;
+}
+
+.hero-link-btn {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    min-width: 280px;
+    max-width: 360px;
+    padding: 14px 18px;
+    border-radius: 16px;
+    text-decoration: none;
+    border: 1px solid rgba(77, 106, 83, 0.16);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(240, 247, 242, 0.96));
+    box-shadow: 0 12px 30px rgba(77, 106, 83, 0.12);
+    transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+    isolation: isolate;
+}
+
+.hero-link-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 16px 34px rgba(77, 106, 83, 0.16);
+    border-color: rgba(77, 106, 83, 0.28);
+}
+
+.hero-link-btn-kicker {
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+}
+
+.hero-link-btn-badge {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ff875f, #ff5d7b);
+    box-shadow: 0 8px 18px rgba(255, 93, 123, 0.24);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    line-height: 1;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+.hero-link-btn-text {
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.hero-link-btn-arrow {
+    position: absolute;
+    right: 16px;
+    bottom: 14px;
+    color: var(--accent-strong);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1;
+    z-index: 2;
+    transition: transform .18s ease;
+}
+
+.btn-global {
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    flex: 0 1 320px;
+    animation: global-pulse 2.8s ease-in-out infinite;
+}
+
+.btn-global::before {
+    content: "";
+    position: absolute;
+    top: -30%;
+    left: -45%;
+    width: 42%;
+    height: 160%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0));
+    transform: rotate(18deg);
+    pointer-events: none;
+    z-index: 0;
+    animation: global-shine 3.6s ease-in-out infinite;
+}
+
+.btn-global::after {
+    content: "";
+    position: absolute;
+    inset: auto -18px -18px auto;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(108, 141, 113, 0.22), rgba(108, 141, 113, 0));
+    pointer-events: none;
+}
+
+.btn-global .hero-link-btn-kicker,
+.btn-global .hero-link-btn-text {
+    position: relative;
+    z-index: 1;
+}
+
+.btn-global .hero-link-btn-arrow,
+.btn-global .hero-link-btn-badge {
+    z-index: 2;
+}
+
+.btn-global:hover .hero-link-btn-arrow {
+    transform: translateX(3px);
+}
+
+@keyframes global-pulse {
+    0%,
+    100% {
+        transform: translateY(0);
+        box-shadow: 0 12px 30px rgba(77, 106, 83, 0.12);
+        border-color: rgba(77, 106, 83, 0.16);
+    }
+
+    50% {
+        transform: translateY(-1px);
+        box-shadow: 0 16px 34px rgba(77, 106, 83, 0.18);
+        border-color: rgba(77, 106, 83, 0.3);
+    }
+}
+
+@keyframes global-shine {
+    0%,
+    20% {
+        left: -45%;
+        opacity: 0;
+    }
+
+    32% {
+        opacity: 0.9;
+    }
+
+    52% {
+        left: 118%;
+        opacity: 0;
+    }
+
+    100% {
+        left: 118%;
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn-global,
+    .btn-global::before {
+        animation: none;
+    }
+}
+
 .powered-by {
     margin-top: 22px;
     font-size: 14px;
@@ -772,6 +948,125 @@ button:disabled {
     margin-top: 22px;
 }
 
+.global-page {
+    padding-top: 18px;
+}
+
+.global-hero {
+    min-height: auto;
+    align-items: stretch;
+    text-align: left;
+    gap: 18px;
+}
+
+.global-hero h1 {
+    max-width: 760px;
+}
+
+.global-sub {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.85;
+    max-width: 760px;
+}
+
+.global-challenge-card {
+    margin-top: 18px;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: linear-gradient(180deg, #fbfefb, #f3f8f4);
+}
+
+.global-challenge-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.global-challenge-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.language-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.language-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: linear-gradient(180deg, #ffffff, #fbfdfb);
+    box-shadow: 0 10px 26px rgba(47, 73, 55, 0.06);
+    text-decoration: none;
+    transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+
+.language-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(47, 73, 55, 0.1);
+    border-color: rgba(77, 106, 83, 0.24);
+}
+
+.language-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.language-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 68px;
+    padding: 7px 10px;
+    border-radius: 999px;
+    background: var(--soft);
+    border: 1px solid var(--line);
+    color: var(--accent-strong);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.language-title {
+    font-size: 18px;
+    line-height: 1.3;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.language-desc {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.language-cta {
+    margin-top: auto;
+    color: var(--accent-strong);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.global-footer-note {
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+    text-align: center;
+}
+
 @media (max-width: 860px) {
     .result-top {
         grid-template-columns: 1fr;
@@ -787,6 +1082,10 @@ button:disabled {
 
     .dim-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .language-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -824,6 +1123,73 @@ button:disabled {
     .powered-by {
         font-size: 13px;
         margin-top: 18px;
+    }
+
+    .hero-actions-home {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .hero-actions-home .btn-primary,
+    .hero-actions-home .hero-link-btn {
+        width: 100%;
+    }
+
+    .hero-actions-home .btn-primary {
+        padding: 13px 16px;
+        border-radius: 14px;
+    }
+
+    .hero-link-btn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        min-width: 0;
+        max-width: none;
+        flex: 0 0 auto;
+        padding: 13px 16px;
+        gap: 0;
+        min-height: auto;
+        border-radius: 14px;
+        box-shadow: 0 8px 20px rgba(77, 106, 83, 0.1);
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-link-btn-badge {
+        top: 8px;
+        right: 10px;
+        min-width: 36px;
+        padding: 3px 7px;
+        font-size: 9px;
+    }
+
+    .hero-link-btn-text {
+        font-size: 13px;
+        line-height: 1.4;
+        padding-right: 18px;
+    }
+
+    .hero-link-btn-kicker {
+        display: none;
+    }
+
+    .hero-link-btn-arrow {
+        right: 12px;
+        bottom: 50%;
+        transform: translateY(50%);
+        font-size: 16px;
+    }
+
+    .btn-global:hover .hero-link-btn-arrow {
+        transform: translate(2px, 50%);
+    }
+
+    .btn-global::after {
+        width: 56px;
+        height: 56px;
+        inset: auto -10px -10px auto;
     }
 
     .dim-grid,
