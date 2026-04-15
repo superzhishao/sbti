@@ -1,6 +1,6 @@
-# SBTI Clone
+# SBTI Personality Test
 
-`sbti-clone` 是对 `https://sbti.fancc.de5.net` 的本地复刻版本。
+`sbti-clone` 是一个面向中文与多语言传播场景的 SBTI 人格测试项目，包含前台测评体验、排行榜、统计接口与管理员后台。
 
 ## 目录
 
@@ -11,25 +11,116 @@
 - `main-[lang].js`: 各语言版本的本地化题库与结果文案脚本
 - `stats.js`: 前端统计展示与上报逻辑
 - `server.py`: 提供静态文件与统计 API 的服务端入口
+- `schema.sql`: 独立的 MySQL 表结构初始化文件
+- `bootstrap_db.py`: 建库、建用户、授权、导入表结构的初始化脚本
 - `requirements.txt`: 服务端依赖
 
-## 本地运行
+## 技术架构要求
 
-在项目目录执行：
+如果你要运行当前这套带统计接口、排行榜和管理员后台的动态版本，`MySQL` 是技术架构需求，不是可选依赖。
+
+动态版本依赖：
+
+- Python 3
+- MySQL 8.x 或兼容的 MySQL/MariaDB
+- `mysql-connector-python`
+
+如果没有 MySQL，只能运行纯静态页面，不能启用：
+
+- 首页累计人数
+- 结果页人格人数
+- 排行榜数据接口
+- 管理员后台统计
+
+## 数据库初始化
+
+### 方式一：推荐，直接用 `bootstrap_db.py`
+
+这个脚本会做四件事：
+
+- 创建数据库
+- 创建应用用户
+- 授权应用用户
+- 导入 `schema.sql`
+
+示例：
 
 ```bash
 pip install -r requirements.txt
+
+MYSQL_ADMIN_HOST=127.0.0.1 \
+MYSQL_ADMIN_PORT=3306 \
+MYSQL_ADMIN_USER=root \
+MYSQL_ADMIN_PASSWORD=your_root_password \
+SBTI_DB_NAME=sbti \
+SBTI_DB_USER=sbti \
+SBTI_DB_PASSWORD=your_app_password \
+SBTI_DB_APP_HOST=127.0.0.1 \
+python3 bootstrap_db.py
+```
+
+### 方式二：手动初始化
+
+先建库、建用户、授权：
+
+```sql
+CREATE DATABASE IF NOT EXISTS sbti CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER IF NOT EXISTS 'sbti'@'127.0.0.1' IDENTIFIED BY 'your_app_password';
+ALTER USER 'sbti'@'127.0.0.1' IDENTIFIED BY 'your_app_password';
+GRANT ALL PRIVILEGES ON sbti.* TO 'sbti'@'127.0.0.1';
+FLUSH PRIVILEGES;
+```
+
+再导入表结构：
+
+```bash
+mysql -h 127.0.0.1 -P 3306 -u sbti -p sbti < schema.sql
+```
+
+## 本地运行
+
+### 启动动态服务
+
+在数据库初始化完成后，执行：
+
+```bash
+pip install -r requirements.txt
+
 SBTI_DB_HOST=127.0.0.1 \
 SBTI_DB_PORT=3306 \
 SBTI_DB_USER=sbti \
-SBTI_DB_PASSWORD=your_password \
+SBTI_DB_PASSWORD=your_app_password \
 SBTI_DB_NAME=sbti \
+python3 server.py
+```
+
+如果要启用管理员后台，再额外提供：
+
+```bash
+SBTI_ADMIN_USER=admin \
+SBTI_ADMIN_PASSWORD=your_admin_password
+```
+
+例如：
+
+```bash
+SBTI_DB_HOST=127.0.0.1 \
+SBTI_DB_PORT=3306 \
+SBTI_DB_USER=sbti \
+SBTI_DB_PASSWORD=your_app_password \
+SBTI_DB_NAME=sbti \
+SBTI_ADMIN_USER=admin \
+SBTI_ADMIN_PASSWORD=your_admin_password \
 python3 server.py
 ```
 
 然后打开：
 
 `http://127.0.0.1:4180`
+
+管理员后台：
+
+`http://127.0.0.1:4180/admin`
 
 多语言挑战入口：
 
@@ -87,6 +178,10 @@ python3 server.py
 - 首页新增了 `Global Mode` 入口按钮，桌面端与手机端都做了单独样式适配。
 - 新增了测评统计能力：首页显示累计完成人数，结果页显示该人格已获得人数。
 - 新增了服务端统计接口与 MySQL 持久化支持，所有 `TYPE_LIBRARY` 数量之和等于成功完成测评总人数。
+- `server.py` 启动时会自动执行 `CREATE TABLE IF NOT EXISTS ...`，也就是在数据库和账号已存在的前提下，可以自动建表。
+- `schema.sql` 是显式可交付的表结构文件，适合给第三方部署、审计、手动导入。
+- `bootstrap_db.py` 是显式可交付的数据库引导脚本，适合首次部署时直接完成建库和导表。
+- `MySQL` 是当前动态统计架构的技术需求，服务端启动、排行榜、管理员后台统计都依赖数据库能力；如果没有 MySQL，只能运行纯静态页面，不能启用这套动态统计功能。
 - 新增了面向欧美市场本地化改写的英文版页面与脚本：`en.html`、`main-en.js`。
 - 新增了面向日本市场本地化改写的日文版页面与脚本：`ja.html`、`main-ja.js`。
 - 新增了面向韩国市场本地化改写的韩文版页面与脚本：`ko.html`、`main-ko.js`。
