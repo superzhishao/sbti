@@ -9,13 +9,22 @@
 - `main.css`: 页面样式
 - `main.js`: 题库、评分逻辑、结果类型和内嵌结果图片
 - `main-[lang].js`: 各语言版本的本地化题库与结果文案脚本
+- `stats.js`: 前端统计展示与上报逻辑
+- `server.py`: 提供静态文件与统计 API 的服务端入口
+- `requirements.txt`: 服务端依赖
 
 ## 本地运行
 
 在项目目录执行：
 
 ```bash
-python3 -m http.server 4180
+pip install -r requirements.txt
+SBTI_DB_HOST=127.0.0.1 \
+SBTI_DB_PORT=3306 \
+SBTI_DB_USER=sbti \
+SBTI_DB_PASSWORD=your_password \
+SBTI_DB_NAME=sbti \
+python3 server.py
 ```
 
 然后打开：
@@ -76,6 +85,8 @@ python3 -m http.server 4180
 - 题目、结果逻辑和结果海报图片已保留在 `main.js` 中。
 - 新增了多语言挑战入口页：`global.html`，可统一跳转到各语言版本。
 - 首页新增了 `Global Mode` 入口按钮，桌面端与手机端都做了单独样式适配。
+- 新增了测评统计能力：首页显示累计完成人数，结果页显示该人格已获得人数。
+- 新增了服务端统计接口与 MySQL 持久化支持，所有 `TYPE_LIBRARY` 数量之和等于成功完成测评总人数。
 - 新增了面向欧美市场本地化改写的英文版页面与脚本：`en.html`、`main-en.js`。
 - 新增了面向日本市场本地化改写的日文版页面与脚本：`ja.html`、`main-ja.js`。
 - 新增了面向韩国市场本地化改写的韩文版页面与脚本：`ko.html`、`main-ko.js`。

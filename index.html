@@ -37,6 +37,14 @@
             <span class="hero-link-btn-arrow" aria-hidden="true">→</span>
           </a>
         </div>
+        <div class="stats-pill">
+          <span id="statsTotalText">当前成功完成测评人数：加载中...</span>
+        </div>
+        <a class="distribution-entry" href="./distribution.html">
+          <span class="distribution-entry-kicker">New Data View</span>
+          <span class="distribution-entry-text">查看全部人格分布榜</span>
+          <span class="distribution-entry-arrow" aria-hidden="true">→</span>
+        </a>
         <div class="powered-by">
           <a
             class="powered-by-link powered-by-brand-link"
@@ -86,6 +94,7 @@
         <div class="result-layout">
           <div class="result-top">
             <div class="poster-box" id="posterBox">
+              <div id="resultCountBanner" class="result-count-banner" hidden></div>
               <img id="posterImage" class="poster-image" alt="人格结果图" />
               <div id="posterCaption" class="poster-caption">怎么样，被我拿捏了吧？</div>
             </div>
@@ -147,16 +156,28 @@
       </a>
     </div>
     <a
-      class="site-logo-link site-logo-link-mobile"
-      href="https://go2run.ai/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="打开 Go2Run 官网"
-    >
-      <img class="site-logo-image" src="./assets/go2run-logo.png" alt="Go2Run" />
-    </a>
+      class="mobile-qr-link"
+        href="https://sbti.go2run.space"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="打开 SBTI 页面二维码链接"
+      >
+        <img class="mobile-qr-image" src="./assets/sbti-qr.png" alt="SBTI 二维码" />
+      </a>
+    <div class="mobile-brand-stack">
+      <a
+        class="site-logo-link site-logo-link-mobile"
+        href="https://go2run.ai/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="打开 Go2Run 官网"
+      >
+        <img class="site-logo-image" src="./assets/go2run-logo.png" alt="Go2Run" />
+      </a>
+    </div>
   </div>
 
   <script src="./main.js"></script>
+  <script src="./stats.js"></script>
 </body>
 </html>

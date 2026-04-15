@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SBTI Admin Dashboard</title>
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="description" content="SBTI 管理员后台，用于查看测评完成量、最新新增和人格分布变化。" />
+  <link rel="stylesheet" href="./main.css" />
+</head>
+<body>
+  <div class="shell admin-page">
+    <section class="hero card hero-minimal admin-hero">
+      <div class="eyebrow">Admin Only</div>
+      <h1>SBTI 管理后台</h1>
+      <p class="global-sub">这个页面只给管理员看，重点看总量、今日新增、近 7 天趋势和最新完成人格记录。</p>
+      <div class="admin-status" id="adminStatus">正在加载后台数据...</div>
+    </section>
+
+    <section class="admin-grid">
+      <article class="card admin-metric-card">
+        <div class="admin-metric-label">总完成测评人数</div>
+        <div class="admin-metric-value" id="adminTotalCompleted">-</div>
+      </article>
+      <article class="card admin-metric-card admin-metric-card-strong">
+        <div class="admin-metric-label">今日新增</div>
+        <div class="admin-metric-value" id="adminTodayCompleted">-</div>
+      </article>
+      <article class="card admin-metric-card">
+        <div class="admin-metric-label">昨日新增</div>
+        <div class="admin-metric-value" id="adminYesterdayCompleted">-</div>
+      </article>
+      <article class="card admin-metric-card">
+        <div class="admin-metric-label">最近 24 小时新增</div>
+        <div class="admin-metric-value" id="adminLast24HoursCompleted">-</div>
+      </article>
+      <article class="card admin-metric-card">
+        <div class="admin-metric-label">最近 7 天新增</div>
+        <div class="admin-metric-value" id="adminLast7DaysCompleted">-</div>
+      </article>
+      <article class="card admin-metric-card">
+        <div class="admin-metric-label">后台可追踪事件数</div>
+        <div class="admin-metric-value" id="adminTrackedEventCount">-</div>
+      </article>
+    </section>
+
+    <section class="card admin-panel">
+      <div class="admin-panel-header">
+        <div>
+          <div class="eyebrow">Growth</div>
+          <h2>最近 14 天新增趋势</h2>
+        </div>
+        <div class="admin-panel-note" id="adminHistoricalNote"></div>
+      </div>
+      <div class="admin-trend" id="adminTrend"></div>
+    </section>
+
+    <section class="admin-two-column">
+      <section class="card admin-panel">
+        <div class="admin-panel-header">
+          <div>
+            <div class="eyebrow">Live Feed</div>
+            <h2>最近完成记录</h2>
+          </div>
+        </div>
+        <div id="adminLatestCompletions" class="admin-latest-list"></div>
+      </section>
+
+      <section class="card admin-panel">
+        <div class="admin-panel-header">
+          <div>
+            <div class="eyebrow">By Type</div>
+            <h2>人格新增表现</h2>
+          </div>
+        </div>
+        <div id="adminTypeBreakdown" class="admin-type-list"></div>
+      </section>
+    </section>
+  </div>
+
+  <script src="./admin.js"></script>
+</body>
+</html>

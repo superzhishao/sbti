@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SBTI人格分布榜</title>
+  <meta name="description" content="查看 SBTI 人格测试的整体人格分布榜与各人格获得人数。" />
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <a
+    class="site-logo-link"
+    href="https://go2run.ai/"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="打开 Go2Run 官网"
+  >
+    <img class="site-logo-image" src="./assets/go2run-logo.png" alt="Go2Run" />
+  </a>
+
+  <div class="shell distribution-page">
+    <section class="hero card hero-minimal distribution-hero">
+      <div class="eyebrow">Distribution</div>
+      <h1>乐子人 SBTI 人格分布榜</h1>
+      <p class="global-sub">看看目前所有已完成测评用户里，哪种人格最多，哪种人格最稀有。</p>
+      <div class="stats-pill stats-pill-large">
+        <span id="distributionTotalText">总测评人数：加载中...</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn-secondary" href="./index.html" style="text-decoration:none; display:inline-flex; align-items:center;">返回首页</a>
+      </div>
+    </section>
+
+    <section class="card distribution-board">
+      <div id="distributionList" class="distribution-list"></div>
+    </section>
+  </div>
+
+  <div class="mobile-bottom-bar">
+    <div class="powered-by powered-by-mobile">
+      <a
+        class="powered-by-link"
+        href="https://go2run.ai/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Powered By Go2Run.AI
+      </a>
+    </div>
+    <a
+      class="mobile-qr-link"
+      href="https://sbti.go2run.space"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="打开 SBTI 页面二维码链接"
+    >
+      <img class="mobile-qr-image" src="./assets/sbti-qr.png" alt="SBTI 二维码" />
+    </a>
+    <div class="mobile-brand-stack">
+      <a
+        class="site-logo-link site-logo-link-mobile"
+        href="https://go2run.ai/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="打开 Go2Run 官网"
+      >
+        <img class="site-logo-image" src="./assets/go2run-logo.png" alt="Go2Run" />
+      </a>
+    </div>
+  </div>
+
+  <script src="./distribution.js"></script>
+</body>
+</html>

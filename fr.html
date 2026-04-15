@@ -23,6 +23,9 @@
         <div class="hero-actions hero-actions-single">
           <button id="startBtn" class="btn-primary">Commencer le test</button>
         </div>
+        <div class="stats-pill">
+          <span id="statsTotalText">Personnes ayant terminé le test : chargement...</span>
+        </div>
         <div class="powered-by">
           <a
             class="powered-by-link powered-by-brand-link"
@@ -71,6 +74,7 @@
         <div class="result-layout">
           <div class="result-top">
             <div class="poster-box" id="posterBox">
+              <div id="resultCountBanner" class="result-count-banner" hidden></div>
               <img id="posterImage" class="poster-image" alt="Affiche du résultat" />
               <div id="posterCaption" class="poster-caption">Oui, ça en dit beaucoup sur toi.</div>
             </div>
@@ -131,16 +135,28 @@
       </a>
     </div>
     <a
-      class="site-logo-link site-logo-link-mobile"
-      href="https://go2run.ai/"
-      target="_blank"
-      rel="noopener noreferrer"
+      class="mobile-qr-link"
+        href="https://sbti.go2run.space"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Open SBTI QR destination"
+      >
+        <img class="mobile-qr-image" src="./assets/sbti-qr.png" alt="SBTI QR code" />
+      </a>
+    <div class="mobile-brand-stack">
+      <a
+        class="site-logo-link site-logo-link-mobile"
+        href="https://go2run.ai/"
+        target="_blank"
+        rel="noopener noreferrer"
       aria-label="Ouvrir Go2Run"
     >
       <img class="site-logo-image" src="./assets/go2run-logo.png" alt="Go2Run" />
-    </a>
+      </a>
+    </div>
   </div>
 
   <script src="./main-fr.js"></script>
+  <script src="./stats.js"></script>
 </body>
 </html>
